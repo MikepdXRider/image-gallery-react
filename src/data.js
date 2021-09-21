@@ -1,4 +1,4 @@
-const images = [
+const dataArr = [
     {
       id: 1,
       url:
@@ -181,4 +181,4 @@ const images = [
     }
   ];
   
-  export default images;
+  export default dataArr;
