@@ -1,3 +1,10 @@
+![Wireframe Plan](./public/wireframe-plan.JPG)
+
+# Credit & Sources
+ Three ways to remove array duplicates - https://www.samanthaming.com/tidbits/43-3-ways-to-remove-array-duplicates/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
