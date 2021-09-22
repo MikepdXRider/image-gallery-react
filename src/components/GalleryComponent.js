@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import dataArr from '../data.js'
+import GalleryFilter from './GalleryFilter.js';
 import ImageListComponent from './ImageListComponent.js';
 
 
@@ -32,24 +33,18 @@ export default class GalleryComponent extends Component {
     render() {
         return (
            <main className='main-flex-container'>
-               {/* 🤷‍♀️ FilterListCompoenent?? */}
                     <div className='flex-container'>
-                        <h4>Type:</h4>
-                        <select onChange={this.handleKeywordChange}>
-                            <option value=''>Show All Horned Creatures</option>
-                            {
-                                uniqueKeywordArr.map((keyword) => <option key={`${keyword}`} value={`${keyword}`}>{keyword}</option>)
-                            }
-                        </select>
-                        <h4>Horns:</h4>
-                        <select onChange={this.handleHornsChange}>
-                            <option value=''>Show All Horned Creatures</option>
-                            {
-                                uniqueHornsArr.map((horn) => <option key={`${horn}`} value={`${horn}`}>{horn}</option>)
-                            }
-                        </select>
+                        <GalleryFilter 
+                        title = 'Creature Type:'
+                        handleFunction = {this.handleKeyWordChange}
+                        filteredData = {uniqueKeywordArr}
+                        />
+                        <GalleryFilter 
+                        title = 'Horn Qty:'
+                        handleFunction = {this.handleHornsChange}
+                        filteredData = {uniqueHornsArr}
+                        />
                     </div>
-               {/* 🤷‍♀️  */}
                 <ImageListComponent
                 keyword={this.state.keyword}
                 horns={this.state.horns}

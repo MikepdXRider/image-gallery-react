@@ -1,3 +1,8 @@
+# Day 2 Plan
+![Wireframe Plan](./public/day2-wireframe-plan.JPG)
+
+
+# Day 1 Plan
 ![Wireframe Plan](./public/wireframe-plan.JPG)
 
 # Credit & Sources
