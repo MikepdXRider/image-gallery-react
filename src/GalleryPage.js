@@ -13,7 +13,7 @@ export default class GalleryPage extends Component {
         <>
           <HeaderComponent />
           <GalleryComponent />
-          <Link to='/'>
+          <Link to='/' className='nav'>
           Home
           </Link>
         </>
