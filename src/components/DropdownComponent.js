@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class GalleryFilter extends Component {
+export default class DropdownComponent extends Component {
     render() {
         const handleFunction = this.props.handleFunction
         const title = this.props.title
