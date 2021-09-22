@@ -1,46 +1,64 @@
-// import React, { Component } from 'react'
-// import images from '../data.js'
-// import ImageListComponent from './ImageListComponent.js';
+import React, { Component } from 'react'
+import dataArr from '../data.js'
+import ImageListComponent from './ImageListComponent.js';
 
 
-// const keywordArr = images.map((image) => image.keyword);
-// const uniqueKeywordArr = keywordArr.filter((item, index) => keywordArr.indexOf(item) === index);
+const keywordArr = dataArr.map((dataObj) => dataObj.keyword);
+const uniqueKeywordArr = keywordArr.filter((item, index) => keywordArr.indexOf(item) === index);
+
+// Courtesy of Dylan Floyd
+const uniqueHornsArr = new Set(...dataArr.map((dataObj) => dataObj.horns))
 
 
-// export default class GalleryComponent extends Component {
-//     // Creates state
-//     state = {
-//         keyword: ''
-//     }
+export default class GalleryComponent extends Component {
+    // Creates state
+    state = {
+        keyword: ''
+    }
     
-//     // Handles selectio change - used on line 28
-//     handleSelectionChange = (e) => {
-//         this.setState({keyword: e.target.value})
-//     }
+    // Handles keyword selection change - used on line 28
+    handleKeywordChange = (e) => {
+        this.setState({keyword: e.target.value})
+    }
 
-//     // Render method
-//     render() {
-//         return (
-//            <main className='main-flex-container'>
-//                {/* 🤷‍♀️ FilterListCompoenent?? */}
-//                     <div className='flex-container'>
-//                         <h4>Filter:</h4>
-//                         <select onChange={this.handleSelectionChange}>
-//                             <option value=''>Show All Horned Createures</option>
-//                             {
-//                                 uniqueKeywordArr.map((keyword) => {
-//                                     return(
-//                                         <option key={`${keyword}`} value={`${keyword}`}>{keyword}</option>
-//                                     )
-//                                 })
-//                             }
-//                         </select>
-//                     </div>
-//                {/* 🤷‍♀️  */}
-//                 <ImageListComponent
-//                 keyword={this.state.keyword}
-//                 />
-//            </main>
-//         )
-//     }
-// }
+    // Handles horns selection change - used on line 28
+    handleHornsChange = (e) => {
+        this.setState({keyword: e.target.value})
+    }
+
+    // Render method
+    render() {
+        return (
+           <main className='main-flex-container'>
+               {/* 🤷‍♀️ FilterListCompoenent?? */}
+                    <div className='flex-container'>
+                        <h4>Filter:</h4>
+                        <select onChange={this.handleKeywordChange}>
+                            <option value=''>Show All Horned Createures</option>
+                            {
+                                uniqueKeywordArr.map((keyword) => {
+                                    return(
+                                        <option key={`${keyword}`} value={`${keyword}`}>{keyword}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                        <select onChange={this.handleHornsChange}>
+                            <option value=''>Show All Horned Createures</option>
+                            {
+                                uniqueHornsArr.map((horn) => {
+                                    return(
+                                        <option key={`${horn}`} value={`${horn}`}>{horn}</option>
+                                    )
+                                })
+                            }
+                        </select>
+                    </div>
+               {/* 🤷‍♀️  */}
+                <ImageListComponent
+                keyword={this.state.keyword}
+                />
+           </main>
+        )
+    }
+}
