@@ -6,7 +6,8 @@ import ImageListComponent from './ImageListComponent.js';
 const keywordArr = dataArr.map((dataObj) => dataObj.keyword);
 const uniqueKeywordArr = keywordArr.filter((item, index) => keywordArr.indexOf(item) === index);
 
-// Courtesy of Dylan Floyd
+
+// Courtesy of Dylan Floyd 🙌
 const uniqueHornsArr = [...new Set(dataArr.map((dataObj) => dataObj.horns))]
 
 
@@ -52,6 +53,7 @@ export default class GalleryComponent extends Component {
                 <ImageListComponent
                 keyword={this.state.keyword}
                 horns={this.state.horns}
+                DataArr={dataArr}
                 />
            </main>
         )
