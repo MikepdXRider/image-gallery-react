@@ -53,7 +53,7 @@ export default class GalleryComponent extends Component {
                 <ImageListComponent
                 keyword={this.state.keyword}
                 horns={this.state.horns}
-                DataArr={dataArr}
+                dataArr={dataArr}
                 />
            </main>
         )
