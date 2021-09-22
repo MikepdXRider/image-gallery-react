@@ -16,7 +16,7 @@ export default class ImageListComponent extends Component {
                                             .filter((dataObj) => horns === '' ? true : dataObj.horns === Number(horns))
                                             .map((dataObj) => {
                             return(
-                                <ImageItemComponent
+                                <ImageItemComponent key={dataObj.id}
                                 dataObj ={dataObj} />
                             )
                         })

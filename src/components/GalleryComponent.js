@@ -22,21 +22,23 @@ export default class GalleryComponent extends Component {
     // Handles keyword selection change - used on line 28
     handleKeywordChange = (e) => {
         this.setState({keyword: e.target.value})
+        console.log('updated keyword', this.state)
     }
 
     // Handles horns selection change - used on line 28
     handleHornsChange = (e) => {
         this.setState({horns: e.target.value})
+        console.log('updated horns', this.state)
     }
 
-    // Render method
+    // Render method 
     render() {
         return (
            <main className='main-flex-container'>
                     <div className='flex-container'>
                         <GalleryFilter 
                         title = 'Creature Type:'
-                        handleFunction = {this.handleKeyWordChange}
+                        handleFunction = {this.handleKeywordChange}
                         filteredData = {uniqueKeywordArr}
                         />
                         <GalleryFilter 
