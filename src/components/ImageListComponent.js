@@ -1,29 +1,28 @@
 import React, { Component } from 'react'
-// import dataArr from '../data.js'
+import ImageItemComponent from './ImageItemComponent.js'
 
+
+// Recieves a filtered dataArr from parent
 export default class ImageListComponent extends Component {
-    dataArr = this.props.dataArr
-
     render() {
+        const dataArr = this.props.dataArr
+        const keyword = this.props.keyword
+        const horns = this.props.horns
         return (
-                <div className='flex-container'>
-                    <ul className='image-galley'>
-                        {
-                            this.props.dataArr.filter((dataObj) => this.props.keyword === '' ? true : dataObj.keyword === this.props.keyword)
-                                                .filter((dataObj) => this.props.horns === '' ? true : dataObj.horns === Number(this.props.horns))
-                                                .map((dataObj) => {
-                                return(
-                                    <li key={`${dataObj.id}`} className='main-flex-container'>
-                                        <h4>{`${dataObj.title}`}</h4>
-                                        <img src={`${dataObj.url}`} alt={`${dataObj.title}`}/>
-                                        <p>{`${dataObj.description}`}</p>
-                                        <p>The {`${dataObj.title}`} has {`${dataObj.horns}`} horn(s)</p>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
+            <div className='flex-container'>
+                <ul className='image-galley'>
+                    {
+                        dataArr.filter((dataObj) => keyword === '' ? true : dataObj.keyword === keyword)
+                                            .filter((dataObj) => horns === '' ? true : dataObj.horns === Number(horns))
+                                            .map((dataObj) => {
+                            return(
+                                <ImageItemComponent key={dataObj.id}
+                                dataObj ={dataObj} />
+                            )
+                        })
+                    }
+                </ul>
+            </div>
         )
     }
 }

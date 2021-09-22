@@ -21,3 +21,9 @@ li{
 img{
   width: 30vw;
 }
+
+.nav{
+    position: fixed;
+    bottom: 90%;
+    left: 10%;
+}
