@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import dataArr from './data.js';
 
+const urlArr = dataArr.map((dataObj) => dataObj.url)
 
 export default class HomePage extends Component {
     state = {
@@ -14,7 +15,6 @@ export default class HomePage extends Component {
         } else { 
             this.setState({acc: this.state.acc + 1})
         }
-        console.log(this.state.acc)
     }
     
     componentDidMount() {
@@ -28,7 +28,7 @@ export default class HomePage extends Component {
                 <Link to='/GalleryPage'>
                     GalleryPage
                 </Link>
-                <img src={dataArr[this.state.acc].url} alt='Horned Creature' />
+                <img src={urlArr[this.state.acc]} alt='Horned Creature' />
             </main>
         )
     }
