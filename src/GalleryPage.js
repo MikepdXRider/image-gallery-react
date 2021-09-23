@@ -2,7 +2,7 @@ import './App.css';
 import HeaderComponent from './components/HeaderComponent.js';
 import GalleryComponent from './components/GalleryComponent.js';
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
